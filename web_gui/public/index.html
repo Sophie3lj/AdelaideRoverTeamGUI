@@ -3,11 +3,50 @@
 <head>
   <title>Adelaide Rover Team GUI</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <script type="text/javascript" src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
 </head>
 
 <body>
   <h1>Adelaide Rover Team GUI</h1>
   <p>Welcome to our GUI!</p>
+
+  <script type="text/javascript">
+    var ros = new ROSLIB.Ros({
+    url : 'wss://i-03c473ef2f4645209.robotigniteacademy.com/fce5d366-9910-4b50-af5e-f8966547c264/rosbridge/'});
+
+    ros.on('connection', function() {
+      console.log('Connected to websocket server.');
+    });
+
+    ros.on('error', function(error) {
+      console.log('Error connecting to websocket server: ', error);
+    });
+
+    ros.on('close', function() {
+      console.log('Connection to websocket server closed.');
+    });
+
+    var cmdVel = new ROSLIB.Topic({
+      ros : ros,
+      name : '/cmd_vel',
+      messageType : 'geometry_msgs/Twist'
+    });
+
+    var twist = new ROSLIB.Message({
+      linear : {
+          x : 0.5,
+          y : 0.0,
+          z : 0.0
+      },
+      angular : {
+          x : 0.0,
+          y : 0.0,
+          z : 0.5
+      }
+    });
+
+    cmdVel.publish(twist);
+  </script>
 </body>
 
 </html>
