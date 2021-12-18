@@ -3,14 +3,39 @@
 <head>
   <title>Adelaide Rover Team GUI</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <script type="text/javascript" src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-</head>
+  <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+  <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<body>
-  <h1>Adelaide Rover Team GUI</h1>
-  <p>Welcome to our GUI!</p>
   <script type="text/javascript">
-    var ros = new ROSLIB.Ros({
+
+  function log(msg) {
+          $('#log').append(msg.toString() + '<br>');
+  };
+
+  function start()
+  {
+    log("Connecting to rosbridge.");
+    var node = new ros.NodeHandle("http://desktop-v2cge83:34031/");
+
+    node.setOnClose(function(e) {
+      log("Disconnected or Can't Connect.");
+    });
+
+    node.setOnError(function(e) {
+      log("Unknown error!");
+    });
+
+    node.setOnOpen(function(e) {
+      log("Connection to rosbridge established.");
+    });
+  }
+
+  $(document).load(function(){
+    start() ;
+  })
+
+    /*var ros = new ROSLIB.Ros({
     url : 'ws://129.127.30.72/rosbridge/'});
 
     ros.on('connection', function() {
@@ -46,6 +71,14 @@
 
     cmdVel.publish(twist);*/
   </script>
+</head>
+
+<body>
+  <h1>Adelaide Rover Team GUI</h1>
+  <p>Welcome to our GUI!</p>
+
+  <div id='log'></div>
+  
 </body>
 
 </html>
