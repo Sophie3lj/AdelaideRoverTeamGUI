@@ -1,4 +1,5 @@
 var express = require('express');
+var ws = require('ws');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -7,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+var client = new ws('ws://129.127.30.45:9090');
 
 app.use(logger('dev'));
 app.use(express.json());

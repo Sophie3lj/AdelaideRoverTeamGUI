@@ -6,9 +6,16 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+<<<<<<< HEAD
+    "morgan": "~1.9.1",
+    "ws": "^8.3.0"
+=======
+    "jquery": "^3.6.0",
     "morgan": "~1.9.1"
+>>>>>>> 8b95a582fdd5812d4b66109205a0cb57fd34f525
   }
 }
