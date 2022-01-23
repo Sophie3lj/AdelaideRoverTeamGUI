@@ -1,0 +1,73 @@
+body {
+    line-height: 1.7em;
+    background: 	#b3b3b3;
+}
+
+.menu-text {
+    color: 	#b3b3b3;
+    font-size: 20px;
+    font-family: 'Anton';
+    padding-top: 8px !important;
+}
+
+.menu-text-dropdown {
+    color: 	#b3b3b3;
+    font-size: 20px;
+    font-family: 'Anton';
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+.home-menu {
+    padding: 0.5em;
+    text-align: left;
+    background: #17192C;
+    float: left;
+}
+
+.pure-menu-list {
+    width: 100% !important;
+    float: left;
+}
+
+.pure-menu-children {
+    background-color: #17192C !important;
+    padding-top: 14px !important;
+    margin-left: -10px !important;
+    width: 162px !important;
+}
+
+.pure-menu-has-children {
+    background: #17192C;
+    float: right;
+    background-color: #17192C;
+}
+
+.menu-text-padding {
+    padding-left: 10px !important;
+}
+
+.pure-menu-horizontal {
+    height: 60px;
+}
+
+.dropdown:hover {
+    background-color: #353a64;
+    cursor: pointer;
+}
+
+.menu-left {
+    float: left;
+}
+
+.meme {
+    font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+}
+
+body.meme-mode * {
+    font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+}
+
+body.meme-mode .pure-menu-children {
+    width: 188px !important;
+}
