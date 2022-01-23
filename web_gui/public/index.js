@@ -4,7 +4,7 @@ var inMemeMode = false;
 function memeMode() {
     var body = document.getElementById("body");
     var logo = document.getElementById("logo");
-    if (!inMemeMode){
+    if (!inMemeMode) {
         body.classList.add("meme-mode");
         logo.src = "MemeLogo.jpeg";
         inMemeMode = true;
