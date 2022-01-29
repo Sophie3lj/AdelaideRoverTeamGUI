@@ -1,7 +1,8 @@
 <html>
 
 <head>
-  <title>Adelaide Rover Team GUI</title>
+  <title>Adelaide Rover Team</title>
+  <link rel="icon" type="image/x-icon" href="icon.png">
   <link rel="stylesheet" href="stylesheets/style.css">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
   <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
@@ -35,9 +36,9 @@ var ros = new ROSLIB.Ros({
     <div class="home-menu pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
         <li class="pure-menu-item menu-left"><img id="logo" src="Logo.png" width="60" height="48" style="margin-top:-3px;"/></li>
-        <li class="pure-menu-item pure-menu-selected menu-text menu-text-padding menu-left"> Adelaide Rover Team - 2022</li>
+        <li class="pure-menu-item pure-menu-selected menu-text menu-text-padding menu-left"> Adelaide Rover Team</li>
         <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover menu-text">
-          Operational Mode
+          Mode Selection
             <ul class="pure-menu-children">
                 <li class="pure-menu-item dropdown menu-text-dropdown menu-text-padding">
                     Test
@@ -45,8 +46,8 @@ var ros = new ROSLIB.Ros({
                 <li class="pure-menu-item dropdown menu-text-dropdown menu-text-padding">
                     Competition
                 </li>
-                <li class="pure-menu-item dropdown meme menu-text-dropdown menu-text-padding" onClick="memeMode()">
-                    Meme
+                <li class="pure-menu-item dropdown menu-text-dropdown menu-text-padding" onClick="memeMode()">
+                    I'm Feeling Lucky &trade
                 </li>
             </ul>
         </li>
