@@ -60,6 +60,10 @@ body {
     float: left;
 }
 
+.menu-right {
+    float: right;
+}
+
 .meme {
     font-family: "Comic Sans MS", "Comic Sans", cursive !important;
 }
