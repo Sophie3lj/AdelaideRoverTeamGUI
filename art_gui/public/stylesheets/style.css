@@ -1,13 +1,14 @@
 body {
     line-height: 1.7em;
     background: 	#b3b3b3;
+    font-family: 'Lato';
 }
 
 .menu-text {
     color: 	#fcfcfc;
     font-size: 20px;
     font-family: 'Anton';
-    padding-top: 8px !important;
+    
 }
 
 .menu-text-dropdown {
@@ -44,11 +45,11 @@ body {
 }
 
 .menu-text-padding {
-    padding-left: 10px !important;
+    padding-left: 20px !important;
 }
 
 .pure-menu-horizontal {
-    height: 60px;
+    height: 12%;
 }
 
 .dropdown:hover {
@@ -74,4 +75,49 @@ body.meme-mode * {
 
 body.meme-mode .pure-menu-children {
     width: 188px !important;
+}
+
+body.meme-mode {
+    background-image: url("henry.png");
+}
+
+.pure-g > div {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    width:100%;
+}
+
+.item-50 {
+    width: 50%;
+    height: auto;
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+    border-radius:5px;
+    border:2px solid #17192C;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.item-25 {
+    width: 25%;
+    height: auto;
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+    border-radius:5px;
+    border: 2px solid #17192C;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.button-autonomous {
+    color: white !important;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #DA5556 !important;
 }
