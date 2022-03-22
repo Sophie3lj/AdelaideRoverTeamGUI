@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-var client = new ws('ws://129.127.30.45:9090');
+var client = new ws('ws://0.0.0.0:9090');
 
 app.use(logger('dev'));
 app.use(express.json());
