@@ -33,7 +33,7 @@
   </script>
 </head>
 
-<body id="body">
+<body id="body" onload="rfidSubscribe()">
   <div class="header">
     <div class="home-menu pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
@@ -57,6 +57,12 @@
   </div>
 
   <div class="container">
+    <div class="item-25">
+      <h2><b>RFID LOG</b></h2>
+      <div id="rfidLog">
+
+      </div>
+    </div>
     <div class="item-25">
       <h2><b>RFID Output</b></h2>
       <div id="rfidOutput">
