@@ -14,8 +14,9 @@
   <script type="text/javascript" src="roslib.min.js"></script>
   <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript">
-var ros = new ROSLIB.Ros({
-    url : 'ws://0.0.0.0:9090'});
+    var ros = new ROSLIB.Ros({
+      url : 'ws://0.0.0.0:9090'
+    });
 
     ros.on('connection', function() {
       console.log('Connected to websocket server.');
@@ -32,7 +33,7 @@ var ros = new ROSLIB.Ros({
   </script>
 </head>
 
-<body id="body">
+<body id="body" onload="rfidSubscribe()">
   <div class="header">
     <div class="home-menu pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
@@ -57,13 +58,36 @@ var ros = new ROSLIB.Ros({
 
   <div class="container">
     <div class="item-25">
+      <h2><b>RFID LOG</b></h2>
+      <div id="rfidLog">
+
+      </div>
+    </div>
+    <div class="item-25">
+      <h2><b>RFID Output</b></h2>
+      <div id="rfidOutput">
+
+      </div>
+    </div>
+    <div class="item-50">
+      <h2>RFID Input</h2>
+      <form class="pure-form">
+        <input type="text" id="rfidString" name="rfidString" placeholder="Message">
+        <input type="number" id="rfidInt" name="rfidInt">
+        <button onclick="rfidPublish()" class="pure-button">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="item-25">
       <h2><button class="pure-button button-autonomous">Autonomous Mode</button></h2>
     </div>
-    <div class="item-25"></div> 
-    <div class="item-25"></div>  
+    <div class="item-25"></div>
+    <div class="item-25"></div>
     <div class="item-25" id="memes">
        <h2><button class="pure-button button-autonomous" onclick="memeMode()">Im Feeling Lucky</button></h2>
-    </div>   
+    </div>
   </div>
 </body>
 

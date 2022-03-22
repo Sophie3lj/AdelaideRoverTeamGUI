@@ -35,3 +35,45 @@ function controllerMode(mode)
             break;
     }
 }
+
+function rfidSubscribe() {
+  console.log("subscribe rfid");
+
+  var rfidListener = new ROSLIB.Topic({
+    ros: ros,
+    name : '/rfid_data_out',
+    messageType : 'std_msgs/String'
+  });
+
+  rfidListener.subscribe(function(message) {
+    document.getElementById("rfidOutput").innerHTML = message.data;
+    document.getElementById("rfidLog").innerHTML = document.getElementById("rfidLog").innerHTML + message.data + "<br>";
+  });
+}
+
+function rfidPublish() {
+  console.log("publish rfid");
+
+  var rfidMessage = new ROSLIB.Topic({
+    ros: ros,
+    name : '/rfid_new_message',
+    messageType : 'std_msgs/String'
+  });
+
+  var rfidBlock = new ROSLIB.Topic({
+    ros: ros,
+    name : '/rfid_block',
+    messageType : 'std_msgs/Int8'
+  });
+
+  var rfidString = new ROSLIB.Message({
+    data: document.getElementById("rfidString").value
+  });
+
+  var rfidInt = new ROSLIB.Message({
+    data: parseInt(document.getElementById("rfidInt").value)
+  });
+
+  rfidMessage.publish(rfidString);
+  rfidBlock.publish(rfidInt);
+}

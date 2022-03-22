@@ -121,3 +121,11 @@ body.meme-mode {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     background: #DA5556 !important;
 }
+
+#rfidString {
+    width: 300px;
+}
+
+#rfidInt {
+    width: 60px;
+}
