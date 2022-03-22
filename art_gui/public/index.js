@@ -20,6 +20,19 @@ function memeMode() {
 function controllerMode(mode)
 {
     var stat = document.getElementById("controllerStatus");
+    
+    var controlMode = new ROSLIB.Topic({
+    	ros: ros,
+  	name : '/controller_mode',
+    	messageType : 'std_msgs/String'
+    });
+    
+    var message = new ROSLIB.Message({
+      data: stat
+    });
+
+    controlMode.publish(message);
+    
     switch(mode){
         case "drive":
             //startDrive();
