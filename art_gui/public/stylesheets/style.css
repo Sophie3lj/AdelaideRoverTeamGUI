@@ -66,11 +66,11 @@ body {
 }
 
 .meme {
-    font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+    font-family: "Comic Sans MS", "Comic Sans", "TSCu_Comic", cursive !important;
 }
 
 body.meme-mode * {
-    font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+    font-family: "Comic Sans MS", "Comic Sans", "TSCu_Comic", cursive !important;
 }
 
 body.meme-mode .pure-menu-children {
@@ -78,8 +78,17 @@ body.meme-mode .pure-menu-children {
 }
 
 body.meme-mode {
-    background-image: url("henry.png");
-    cursor: url("../ryan.png"), default;
+    background-image: url("ryan.png");
+    background-size: 100% 100%;
+    cursor: url("ryan.png"), default;
+}
+
+body.meme-mode .item-50 {
+	background-color: rgba(255,255,255,0.5);
+}
+
+body.meme-mode .item-25 {
+	background-color: rgba(255,255,255,0.5);
 }
 
 .pure-g > div {
@@ -129,4 +138,9 @@ body.meme-mode {
 
 #rfidInt {
     width: 60px;
+}
+
+#rfidLog {
+	overflow-y: scroll;
+	max-height: 200px;
 }
