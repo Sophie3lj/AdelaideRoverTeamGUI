@@ -1,0 +1,12 @@
+GETTING GUI RUNNING
+terminal 1:
+    roscore
+terminal 2:
+    roslaunch rosbridge_server rosbridge_websocket.launch
+terminal 3:
+    ./gui.sh
+
+GETTING ROVER RUNNING
+
+
+CAMERA FEED SWITCHING

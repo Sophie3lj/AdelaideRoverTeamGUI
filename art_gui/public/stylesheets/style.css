@@ -79,6 +79,7 @@ body.meme-mode .pure-menu-children {
 
 body.meme-mode {
     background-image: url("henry.png");
+    cursor: url("../ryan.png"), default;
 }
 
 .pure-g > div {
