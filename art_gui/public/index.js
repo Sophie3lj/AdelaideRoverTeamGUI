@@ -49,6 +49,56 @@ function controllerMode(mode)
     }
 }
 
+
+function driveMode(mode)
+{
+    var stat = document.getElementById("driveStatus");
+    
+    var driveMode = new ROSLIB.Topic({
+    	ros: ros,
+  	name : '/drive_mode',
+    	messageType : 'std_msgs/String'
+    });
+    
+    var message = new ROSLIB.Message({
+      data: stat
+    });
+
+    driveMode.publish(message);
+    
+    switch(mode){
+        case "straight":
+            //startDrive();
+            stat.innerHTML = "Currently in <b>straight</b> state";
+            break;
+        case "arc":
+            //startArm();
+            stat.innerHTML = "Currently in <b>arc</b> state";
+            break;
+        case "rotate":
+            //startPayload();
+            stat.innerHTML = "Currently in <b>rotate</b> state";
+            break;
+    }
+}
+
+function initialiseRos() {
+	rfidSubscribe()
+	payloadSubscribe()
+}
+
+function payloadSubscribe() {
+  var payloadListener = new ROSLIB.Topic({
+    ros: ros,
+    name : '/payload',
+    messageType : 'std_msgs/String'
+  });
+
+  rfidListener.subscribe(function(message) {
+    document.getElementById("payloadOutput").innerHTML = message.data;
+  });
+}
+
 function rfidSubscribe() {
   console.log("subscribe rfid");
 

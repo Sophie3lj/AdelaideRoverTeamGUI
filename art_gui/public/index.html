@@ -33,7 +33,7 @@
   </script>
 </head>
 
-<body id="body" onload="rfidSubscribe()">
+<body id="body" onload="initialiseRos()">
   <div class="header">
     <div class="home-menu pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
@@ -51,22 +51,26 @@
         <button class="pure-button" onclick="controllerMode('arm')">Arm Control</button>
         <button class="pure-button" onclick="controllerMode('payload')">Payload</button>
     </div>
-    <div class="item-50">
-      <h2>Sensor Outputs</h2>
+    <div class="item-25">
+      <h2><b>Drive Mode</b></h2>
+      <p> <div id="driveStatus">Currently in <b>Arc</b> state</div></p>
+        <button class="pure-button" onclick="driveMode('straight')">Straight</button>
+        <button class="pure-button" onclick="driveMode('arc')">Arc</button>
+        <button class="pure-button" onclick="driveMode('rotate')">Rotate</button>
+    </div>
+    <div class="item-25">
+      <h2><b>Moisture Sensor Data</b></h2>
+      <div id="payloadOutput">
+      </div>
+    </div>
+    <div class="item-25">
+
     </div>
   </div>
 
   <div class="container">
     <div class="item-25">
       <h2><b>RFID LOG</b></h2>
-      <div id="rfidLog">
-	<p>one</p>
-	<p>two</p>
-	<p>three</p>
-	<p>four</p>
-	<p>five</p>
-	<p>six</p>
-      </div>
     </div>
     <div class="item-25">
       <h2><b>RFID Output</b></h2>
