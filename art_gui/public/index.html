@@ -12,6 +12,7 @@
   <meta name="description" content="A layout example that shows off a responsive product landing page.">
   <script type="text/javascript" src="eventemitter2.js"></script>
   <script type="text/javascript" src="roslib.min.js"></script>
+  <script type="text/javascript" src="chart.min.js"></script>
   <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript">
     var ros = new ROSLIB.Ros({
@@ -92,7 +93,7 @@
     <div class="item-25">
       <h2><button class="pure-button button-autonomous">Autonomous Mode</button></h2>
     </div>
-    <div class="item-25"></div>
+    <div id="testChart" class="item-25"></div>
     <div class="item-25"></div>
     <div class="item-25" id="memes">
        <h2><button class="pure-button button-autonomous" onclick="memeMode()">Im Feeling Lucky</button></h2>
