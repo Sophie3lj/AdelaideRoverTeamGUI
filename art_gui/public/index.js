@@ -28,7 +28,7 @@ function controllerMode(mode)
     });
     
     var message = new ROSLIB.Message({
-      data: stat
+      data: mode
     });
 
     controlMode.publish(message);
@@ -36,15 +36,15 @@ function controllerMode(mode)
     switch(mode){
         case "drive":
             //startDrive();
-            stat.innerHTML = "Currently in <b>Drive<b> state";
+            stat.innerHTML = "Currently in <b>DRIVE<b> state";
             break;
         case "arm":
             //startArm();
-            stat.innerHTML = "Currently in <b>Arm</b> state";
+            stat.innerHTML = "Currently in <b>ARM</b> state";
             break;
         case "payload":
             //startPayload();
-            stat.innerHTML = "Currently in <b>Payload</b> state";
+            stat.innerHTML = "Currently in <b>PAYLOAD</b> state";
             break;
     }
 }
@@ -53,15 +53,16 @@ function controllerMode(mode)
 function driveMode(mode)
 {
     var stat = document.getElementById("driveStatus");
+
     
     var driveMode = new ROSLIB.Topic({
     	ros: ros,
-  	name : '/drive_mode',
+  	name : '/drive_system_mode',
     	messageType : 'std_msgs/String'
     });
     
     var message = new ROSLIB.Message({
-      data: stat
+      data: mode
     });
 
     driveMode.publish(message);
@@ -69,15 +70,15 @@ function driveMode(mode)
     switch(mode){
         case "straight":
             //startDrive();
-            stat.innerHTML = "Currently in <b>straight</b> state";
+            stat.innerHTML = "Currently in <b>STRAIGHT</b> state";
             break;
         case "arc":
             //startArm();
-            stat.innerHTML = "Currently in <b>arc</b> state";
+            stat.innerHTML = "Currently in <b>ARC</b> state";
             break;
         case "rotate":
             //startPayload();
-            stat.innerHTML = "Currently in <b>rotate</b> state";
+            stat.innerHTML = "Currently in <b>ROTATE</b> state";
             break;
     }
 }
@@ -90,7 +91,7 @@ function initialiseRos() {
 function payloadSubscribe() {
   var payloadListener = new ROSLIB.Topic({
     ros: ros,
-    name : '/payload',
+    name : '/probe_readings',
     messageType : 'std_msgs/String'
   });
 

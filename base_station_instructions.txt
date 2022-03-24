@@ -10,7 +10,7 @@ GETTING ROVER RUNNING
 
 
 CAMERA FEED SWITCHING
-ssh rover@172.16.0.**
+ssh rover@172.16.3.2
 Jetson password: rover
 v4l2-ctl --list-devices
 
