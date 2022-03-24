@@ -144,3 +144,8 @@ body.meme-mode .item-25 {
 	overflow-y: scroll;
 	max-height: 200px;
 }
+
+#ryan {
+    background-image: url("ryan.png");
+    background-size: 100% 100%;
+}
