@@ -1,16 +1,32 @@
-GETTING GUI RUNNING
-terminal 1:
-    roscore
-terminal 2:
-    roslaunch rosbridge_server rosbridge_websocket.launch
-terminal 3:
-    ./gui.sh
-
-GETTING ROVER RUNNING
-
-
 CAMERA FEED SWITCHING
+	2 TERMINALS TO RUN THE SINKS
+	cd Desktop/gui/camera/
+	bash recieve_video.sh 7001
+	cd Desktop/gui/camera/
+	bash recieve_video.sh 7002
+2 TERMINALS TO RUN CAMERAS
 ssh rover@172.16.3.2
 Jetson password: rover
 v4l2-ctl --list-devices
+
+
+OPEN GUI
+terminal
+	./gui.sh
+	
+JAKE GET ROS RUNNING ON PI
+
+RUN ROSBRIDGE
+terminal
+    roslaunch rosbridge_server rosbridge_websocket.launch
+REFRESH GUI
+
+NOW WE CAN DO STUFF!
+
+
+
+
+	gst-launch-1.0 v4l2src device=/dev/video2 ! caps="application/x-rtp,media=video,clock-rate=90000,encoding-name=H264,payload=96" ! autovideosink
+
+
 
