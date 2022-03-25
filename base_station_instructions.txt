@@ -8,6 +8,7 @@ CAMERA FEED SWITCHING
 ssh rover@172.16.3.2
 Jetson password: rover
 v4l2-ctl --list-devices
+Inputs: /dev/video? Portnumber rotation 
 
 
 OPEN GUI
@@ -26,7 +27,10 @@ NOW WE CAN DO STUFF!
 
 
 
-	gst-launch-1.0 v4l2src device=/dev/video2 ! caps="application/x-rtp,media=video,clock-rate=90000,encoding-name=H264,payload=96" ! autovideosink
+
+
+
+videoflip method=$3
 
 
 
