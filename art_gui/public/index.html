@@ -34,7 +34,7 @@
   </script>
 </head>
 
-<body id="body" onload="initialiseRos()">
+<body id="body" onload="payloadSubscribe()">
   <div class="header">
     <div class="home-menu pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
@@ -45,60 +45,78 @@
   </div>
 
   <div class="container">
-    <div class="item-25">
-      <h2><b>Controller Mode</b></h2>
-      <p> <div id="controllerStatus">Currently in <b>Drive</b> state</div></p>
-        <button class="pure-button" onclick="controllerMode('drive')">Driving</button>
-        <button class="pure-button" onclick="controllerMode('arm')">Arm Control</button>
-        <button class="pure-button" onclick="controllerMode('payload')">Payload</button>
-    </div>
-    <div class="item-25">
-      <h2><b>Drive Mode</b></h2>
-      <p> <div id="driveStatus">Currently in <b>Arc</b> state</div></p>
-        <button class="pure-button" onclick="driveMode('straight')">Straight</button>
-        <button class="pure-button" onclick="driveMode('arc')">Arc</button>
-        <button class="pure-button" onclick="driveMode('rotate')">Rotate</button>
-    </div>
-    <div class="item-25">
-      <h2><b>Moisture Sensor Data</b></h2>
-      <div id="payloadOutput">
+    <div class="cont-75">
+      <div class="container">
+        <div class="item-75 chartEgg">
+          <canvas id="myChart" height="140px"></canvas>
+        </div>
+      </div>
+      <div class="container">
+        <div class="item-75" id="payloadOutput">
+        </div>
+        <div class="item-25">
+          <button class="pure-button" onclick="exportData()">EXPORT DATA</button>
+        </div>
       </div>
     </div>
-    <div id="ryan" class="item-25">
-
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="item-25">
-      <h2><b>RFID LOG</b></h2>
-    </div>
-    <div class="item-25">
-      <h2><b>RFID Output</b></h2>
-      <div id="rfidOutput">
-
+    <script type="text/javascript" src="sensorChart.js"></script>
+    <div class="cont-25">
+      <div class="container">
+        <div class="item-75">
+          <h3><b>Data Visualisation</b></h3>
+            <button class="pure-button" onclick="dataMode('on')">Start</button>
+            <button class="pure-button" onclick="dataMode('off')">Stop</button>
+            <button class="pure-button" onclick="resetChart(myChart)">Reset</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="item-75">
+          <h3><b>Actuator Mode</b></h3>
+          <p> <div id="payloadStatus">Currently in <b>STOP</b> state</div></p>
+            <button class="pure-button" onclick="payloadMode('lower')">Lower</button>
+            <button class="pure-button" onclick="payloadMode('stop')">STOP</button>
+            <button class="pure-button" onclick="payloadMode('raise')">Raise</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="item-75">
+          <h3><b>Controller Mode</b></h3>
+          <p> <div id="controllerStatus">Currently in <b>Drive</b> state</div></p>
+            <button class="pure-button" onclick="controllerMode('drive')">Driving</button>
+            <button class="pure-button" onclick="controllerMode('arm')">Arm Control</button>
+            <button class="pure-button" onclick="controllerMode('payload')">Payload</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="item-75">
+          <h3><b>Drive Mode</b></h3>
+          <p> <div id="driveStatus">Currently in <b>Arc</b> state</div></p>
+            <button class="pure-button" onclick="driveMode('straight')">Straight</button>
+            <button class="pure-button" onclick="driveMode('arc')">Arc</button>
+            <button class="pure-button" onclick="driveMode('rotate')">Rotate</button>
+        </div>
+      </div>
+      <!--<div class="container">
+        <div id="ryan" class="item-25"></div>
+      </div>
+      <div class="container">
+        <div class="item-75" id="memes">
+          <h2><button class="pure-button button-autonomous" onclick="memeMode()">Im Feeling Lucky</button></h2>
+        </div>
+      </div>-->
+      <div class="container">
+        <div class="item-75" id="memes">
+          <button class="pure-button button-autonomous" onclick="addData(myChart, testData)">Add</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="item-75" id="memes">
+          <button class="pure-button button-autonomous" onclick="resetChart(myChart)">Reset</button>
+        </div>
       </div>
     </div>
-    <div class="item-50">
-      <h2>RFID Input</h2>
-      <form class="pure-form">
-        <input type="text" id="rfidString" name="rfidString" placeholder="Message">
-        <input type="number" id="rfidInt" name="rfidInt">
-        <button onclick="rfidPublish()" class="pure-button">Send</button>
-      </form>
-    </div>
   </div>
-
-  <div class="container">
-    <div class="item-25">
-      <h2><button class="pure-button button-autonomous">Autonomous Mode</button></h2>
-    </div>
-    <div id="testChart" class="item-25"></div>
-    <div class="item-25"></div>
-    <div class="item-25" id="memes">
-       <h2><button class="pure-button button-autonomous" onclick="memeMode()">Im Feeling Lucky</button></h2>
-    </div>
-  </div>
+  
 </body>
 
 </html>

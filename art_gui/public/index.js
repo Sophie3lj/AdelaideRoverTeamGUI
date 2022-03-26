@@ -84,10 +84,9 @@ function driveMode(mode)
 }
 
 function initialiseRos() {
-	rfidSubscribe()
 	payloadSubscribe()
 }
-
+ /*
 function payloadSubscribe() {
   var payloadListener = new ROSLIB.Topic({
     ros: ros,
@@ -95,81 +94,7 @@ function payloadSubscribe() {
     messageType : 'std_msgs/String'
   });
 
-  rfidListener.subscribe(function(message) {
+  payloadListener.subscribe(function(message) {
     document.getElementById("payloadOutput").innerHTML = message.data;
   });
-}
-
-function rfidSubscribe() {
-  console.log("subscribe rfid");
-
-  var rfidListener = new ROSLIB.Topic({
-    ros: ros,
-    name : '/rfid_data_out',
-    messageType : 'std_msgs/String'
-  });
-
-  rfidListener.subscribe(function(message) {
-    document.getElementById("rfidOutput").innerHTML = message.data;
-    document.getElementById("rfidLog").innerHTML = document.getElementById("rfidLog").innerHTML + message.data + "<br>";
-  });
-}
-
-function rfidPublish() {
-  console.log("publish rfid");
-
-  var rfidMessage = new ROSLIB.Topic({
-    ros: ros,
-    name : '/rfid_new_message',
-    messageType : 'std_msgs/String'
-  });
-
-  var rfidBlock = new ROSLIB.Topic({
-    ros: ros,
-    name : '/rfid_block',
-    messageType : 'std_msgs/Int8'
-  });
-
-  var rfidString = new ROSLIB.Message({
-    data: document.getElementById("rfidString").value
-  });
-
-  var rfidInt = new ROSLIB.Message({
-    data: parseInt(document.getElementById("rfidInt").value)
-  });
-
-  rfidMessage.publish(rfidString);
-  rfidBlock.publish(rfidInt);
-}
-
-
-
-const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-  ];
-
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
-    }]
-  };
-
-  const config = {
-    type: 'line',
-    data: data,
-    options: {}
-  };
-  
- const myChart = new Chart(
-    document.getElementById('testChart'),
-    config
-  );
+}*/

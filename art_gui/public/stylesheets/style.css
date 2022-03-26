@@ -125,11 +125,51 @@ body.meme-mode .item-25 {
     flex-grow: 1;
 }
 
+.item-75 {
+    width: 75%;
+    height: auto;
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+    border-radius:5px;
+    border: 2px solid #17192C;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.cont-25 {
+    width: 25%;
+    height: auto;
+    margin: 1em;
+    /*padding: 1em;*/
+    /*background-color: white;
+    border-radius:5px;
+    border: 2px solid #17192C;*/
+    text-align: center;
+    flex-grow: 1;
+}
+
+.cont-75 {
+    width: 75%;
+    height: auto;
+    margin: 1em;
+    /*padding: 1em;
+    background-color: white;
+    border-radius:5px;
+    border: 2px solid #17192C;*/
+    text-align: center;
+    flex-grow: 1;
+}
+
 .button-autonomous {
     color: white !important;
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     background: #DA5556 !important;
+}
+
+.chartEgg {
+    background:rgba(255,255,255,0.8);
 }
 
 #rfidString {
@@ -140,12 +180,13 @@ body.meme-mode .item-25 {
     width: 60px;
 }
 
-#rfidLog {
+#payloadOutput{
 	overflow-y: scroll;
-	max-height: 200px;
+	max-height: 100px;
 }
 
 #ryan {
     background-image: url("ryan.png");
+    height: 150px;
     background-size: 100% 100%;
 }
