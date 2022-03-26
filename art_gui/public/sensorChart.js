@@ -28,10 +28,23 @@ x_axis = 0;
 var readings = [];
 
 function exportData() {
-    let csvContent = "data:text/csv;charset=utf-8,";
+    var csvContent = '';
     for(i=0; i<readings.length; i++){
-        csvContent += row + "\n";
+        csvContent += readings[i] + "\n";
     }
+    filename = 'moistureData.csv';
+    csvData = encodeURIComponent(csvContent);
+
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + csvData);
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
 }
 
 function addData(chart, d) {
